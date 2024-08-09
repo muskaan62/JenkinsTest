@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+     parameters {
+        choice(name: 'POD', choices: ["1","2","3"], description: 'Pod where the snappack is to be purged from')
+        choice(name: 'SNAPPACK_NAME', choices: ["A","B","C"], description: 'Provide if the snappack type is public or premium')
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
